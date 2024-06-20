@@ -31,6 +31,9 @@ namespace ConnectFour
         private List<Button> buttonsCol6;
         private List<Button> buttonsCol7;
 
+        private int player;
+        private Color playerColor;
+
         public Form1()
         {
             InitializeComponent();
@@ -55,41 +58,53 @@ namespace ConnectFour
             col5.Enabled = true;
             col6.Enabled = true;
             col7.Enabled = true;
+
+            player = 1;
+            playerLabel.Text = "Player 1";
+            playerColor = Color.Red;
+
         }
 
         private void col1_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol1, col1List, Color.White);
+            ColumnFiller(buttonsCol1, col1List, playerColor);
+            playerSwap();
         }
 
         private void col2_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol2, col2List, Color.White);
+            ColumnFiller(buttonsCol2, col2List, playerColor);
+            playerSwap();
         }
 
         private void col3_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol3, col3List, Color.White);
+            ColumnFiller(buttonsCol3, col3List, playerColor);
+            playerSwap();
         }
 
         private void col4_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol4, col4List, Color.White);
+            ColumnFiller(buttonsCol4, col4List, playerColor);
+            playerSwap();
         }
 
         private void col5_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol5, col5List, Color.White);
+            ColumnFiller(buttonsCol5, col5List, playerColor);
+            playerSwap();
         }
 
         private void col6_Click(object sender, EventArgs e)
-        {
-            ColumnFiller(buttonsCol6, col6List, Color.White);
+        {   
+            ColumnFiller(buttonsCol6, col6List, playerColor);
+            playerSwap();
         }
 
         private void col7_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol7, col7List, Color.White);
+            ColumnFiller(buttonsCol7, col7List, playerColor);
+            playerSwap();
         }
 
         public void ColumnFiller(List<Button> buttons, List<int> colList, Color fillColor)
@@ -115,6 +130,29 @@ namespace ConnectFour
                     allButtons[i][j].BackColor = Color.Transparent;
                 }
             }
+
+            player = 1;
+            playerLabel.Text = "Player 1";
+            playerColor = Color.Red;
+
+        }
+
+        private void playerSwap()
+        {
+            if (player == 1)
+            {
+                player = 2;
+                playerLabel.Text = "Player 2";
+                playerColor = Color.Yellow;
+            }
+            else
+            {
+                player = 1;
+                playerLabel.Text = "Player 1";
+                playerColor = Color.Red;
+            }
+
+
         }
     }
 }

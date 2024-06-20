@@ -79,6 +79,7 @@
             this.button41 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
+            this.playerLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // col7
@@ -556,11 +557,22 @@
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
+            // playerLabel
+            // 
+            this.playerLabel.AutoSize = true;
+            this.playerLabel.Font = new System.Drawing.Font("Yu Gothic UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerLabel.Location = new System.Drawing.Point(237, 21);
+            this.playerLabel.Name = "playerLabel";
+            this.playerLabel.Size = new System.Drawing.Size(122, 50);
+            this.playerLabel.TabIndex = 135;
+            this.playerLabel.Text = "player";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.playerLabel);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.button37);
             this.Controls.Add(this.button38);
@@ -615,6 +627,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -670,6 +683,7 @@
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;
         private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.Label playerLabel;
     }
 }
 
