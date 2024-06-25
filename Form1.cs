@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace ConnectFour
 {
@@ -33,6 +34,9 @@ namespace ConnectFour
 
         private int player;
         private Color playerColor;
+
+        private int button;
+        public int buttNum;
 
         public Form1()
         {
@@ -67,47 +71,47 @@ namespace ConnectFour
 
         private void col1_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol1, col1List, playerColor);
+            button = ColumnFiller(buttonsCol1, col1List, playerColor, 1);
             playerSwap();
         }
 
         private void col2_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol2, col2List, playerColor);
+            button = ColumnFiller(buttonsCol2, col2List, playerColor, 2);
             playerSwap();
         }
 
         private void col3_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol3, col3List, playerColor);
+            button = ColumnFiller(buttonsCol3, col3List, playerColor, 3);
             playerSwap();
         }
 
         private void col4_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol4, col4List, playerColor);
+            button = ColumnFiller(buttonsCol4, col4List, playerColor, 4);
             playerSwap();
         }
 
         private void col5_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol5, col5List, playerColor);
+            button = ColumnFiller(buttonsCol5, col5List, playerColor, 5);
             playerSwap();
         }
 
         private void col6_Click(object sender, EventArgs e)
         {   
-            ColumnFiller(buttonsCol6, col6List, playerColor);
+            button = ColumnFiller(buttonsCol6, col6List, playerColor, 6);
             playerSwap();
         }
 
         private void col7_Click(object sender, EventArgs e)
         {
-            ColumnFiller(buttonsCol7, col7List, playerColor);
+            button = ColumnFiller(buttonsCol7, col7List, playerColor, 7);
             playerSwap();
         }
 
-        public void ColumnFiller(List<Button> buttons, List<int> colList, Color fillColor)
+        public int ColumnFiller(List<Button> buttons, List<int> colList, Color fillColor, int colNum)
         {
             for (int i = 5; i > -1; i--)
             {
@@ -116,8 +120,16 @@ namespace ConnectFour
                     buttons[i].BackColor = fillColor;
                     colList[i] = 1;
                     break;
+
+                    
                 }
+
+                int buttNum = (colNum * 7) + i;
+                
+
             }
+
+            return buttNum;
         }
 
         private void resetButton_Click(object sender, EventArgs e)
@@ -153,6 +165,17 @@ namespace ConnectFour
             }
 
 
+        }
+
+        private void winCheck(int button)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                for (int j = 0; j < 6; i++)
+                {
+                    
+                }
+            }
         }
     }
 }
